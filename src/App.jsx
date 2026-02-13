@@ -21,7 +21,7 @@ export default function App() {
   const [selectedMonths, setSelectedMonths] = useState(['2025-01', '2025-12']);
 
   useEffect(() => {
-    fetch('/data/bluebikes-2025.json')
+    fetch(import.meta.env.BASE_URL + 'data/bluebikes-2025.json')
       .then((r) => r.json())
       .then((d) => {
         setData(d);
