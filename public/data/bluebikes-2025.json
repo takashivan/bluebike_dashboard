@@ -1,0 +1,1495 @@
+{
+  "kpis": {
+    "totalTrips": 4613941,
+    "avgDurationMin": 15.4,
+    "activeStations": 622,
+    "memberPct": 71.4
+  },
+  "monthlyTrips": [
+    {
+      "month": "2025-01",
+      "member": 140624,
+      "casual": 21655
+    },
+    {
+      "month": "2025-02",
+      "member": 142661,
+      "casual": 23364
+    },
+    {
+      "month": "2025-03",
+      "member": 213143,
+      "casual": 58909
+    },
+    {
+      "month": "2025-04",
+      "member": 271755,
+      "casual": 102202
+    },
+    {
+      "month": "2025-05",
+      "member": 296062,
+      "casual": 133780
+    },
+    {
+      "month": "2025-06",
+      "member": 330899,
+      "casual": 157313
+    },
+    {
+      "month": "2025-07",
+      "member": 357766,
+      "casual": 181826
+    },
+    {
+      "month": "2025-08",
+      "member": 358250,
+      "casual": 190810
+    },
+    {
+      "month": "2025-09",
+      "member": 403895,
+      "casual": 183005
+    },
+    {
+      "month": "2025-10",
+      "member": 362213,
+      "casual": 151334
+    },
+    {
+      "month": "2025-11",
+      "member": 261445,
+      "casual": 83256
+    },
+    {
+      "month": "2025-12",
+      "member": 154067,
+      "casual": 33707
+    }
+  ],
+  "dayOfWeek": [
+    {
+      "day": "Mon",
+      "member": 472891,
+      "casual": 155420
+    },
+    {
+      "day": "Tue",
+      "member": 543278,
+      "casual": 159986
+    },
+    {
+      "day": "Wed",
+      "member": 550747,
+      "casual": 165835
+    },
+    {
+      "day": "Thu",
+      "member": 509336,
+      "casual": 163302
+    },
+    {
+      "day": "Fri",
+      "member": 497077,
+      "casual": 209723
+    },
+    {
+      "day": "Sat",
+      "member": 375154,
+      "casual": 251228
+    },
+    {
+      "day": "Sun",
+      "member": 344297,
+      "casual": 215667
+    }
+  ],
+  "hourlyByDay": [
+    {
+      "day": "Sun",
+      "hour": 0,
+      "trips": 12921
+    },
+    {
+      "day": "Sun",
+      "hour": 1,
+      "trips": 12128
+    },
+    {
+      "day": "Sun",
+      "hour": 2,
+      "trips": 6906
+    },
+    {
+      "day": "Sun",
+      "hour": 3,
+      "trips": 2084
+    },
+    {
+      "day": "Sun",
+      "hour": 4,
+      "trips": 1301
+    },
+    {
+      "day": "Sun",
+      "hour": 5,
+      "trips": 2008
+    },
+    {
+      "day": "Sun",
+      "hour": 6,
+      "trips": 4298
+    },
+    {
+      "day": "Sun",
+      "hour": 7,
+      "trips": 7512
+    },
+    {
+      "day": "Sun",
+      "hour": 8,
+      "trips": 13699
+    },
+    {
+      "day": "Sun",
+      "hour": 9,
+      "trips": 24169
+    },
+    {
+      "day": "Sun",
+      "hour": 10,
+      "trips": 32446
+    },
+    {
+      "day": "Sun",
+      "hour": 11,
+      "trips": 37417
+    },
+    {
+      "day": "Sun",
+      "hour": 12,
+      "trips": 43159
+    },
+    {
+      "day": "Sun",
+      "hour": 13,
+      "trips": 45068
+    },
+    {
+      "day": "Sun",
+      "hour": 14,
+      "trips": 45040
+    },
+    {
+      "day": "Sun",
+      "hour": 15,
+      "trips": 44811
+    },
+    {
+      "day": "Sun",
+      "hour": 16,
+      "trips": 45641
+    },
+    {
+      "day": "Sun",
+      "hour": 17,
+      "trips": 44215
+    },
+    {
+      "day": "Sun",
+      "hour": 18,
+      "trips": 40844
+    },
+    {
+      "day": "Sun",
+      "hour": 19,
+      "trips": 31125
+    },
+    {
+      "day": "Sun",
+      "hour": 20,
+      "trips": 23503
+    },
+    {
+      "day": "Sun",
+      "hour": 21,
+      "trips": 17492
+    },
+    {
+      "day": "Sun",
+      "hour": 22,
+      "trips": 13541
+    },
+    {
+      "day": "Sun",
+      "hour": 23,
+      "trips": 8636
+    },
+    {
+      "day": "Mon",
+      "hour": 0,
+      "trips": 4758
+    },
+    {
+      "day": "Mon",
+      "hour": 1,
+      "trips": 2787
+    },
+    {
+      "day": "Mon",
+      "hour": 2,
+      "trips": 1470
+    },
+    {
+      "day": "Mon",
+      "hour": 3,
+      "trips": 841
+    },
+    {
+      "day": "Mon",
+      "hour": 4,
+      "trips": 1082
+    },
+    {
+      "day": "Mon",
+      "hour": 5,
+      "trips": 4738
+    },
+    {
+      "day": "Mon",
+      "hour": 6,
+      "trips": 12949
+    },
+    {
+      "day": "Mon",
+      "hour": 7,
+      "trips": 31071
+    },
+    {
+      "day": "Mon",
+      "hour": 8,
+      "trips": 53084
+    },
+    {
+      "day": "Mon",
+      "hour": 9,
+      "trips": 33944
+    },
+    {
+      "day": "Mon",
+      "hour": 10,
+      "trips": 24152
+    },
+    {
+      "day": "Mon",
+      "hour": 11,
+      "trips": 25283
+    },
+    {
+      "day": "Mon",
+      "hour": 12,
+      "trips": 29127
+    },
+    {
+      "day": "Mon",
+      "hour": 13,
+      "trips": 29432
+    },
+    {
+      "day": "Mon",
+      "hour": 14,
+      "trips": 32120
+    },
+    {
+      "day": "Mon",
+      "hour": 15,
+      "trips": 39098
+    },
+    {
+      "day": "Mon",
+      "hour": 16,
+      "trips": 54401
+    },
+    {
+      "day": "Mon",
+      "hour": 17,
+      "trips": 73603
+    },
+    {
+      "day": "Mon",
+      "hour": 18,
+      "trips": 58065
+    },
+    {
+      "day": "Mon",
+      "hour": 19,
+      "trips": 43006
+    },
+    {
+      "day": "Mon",
+      "hour": 20,
+      "trips": 29870
+    },
+    {
+      "day": "Mon",
+      "hour": 21,
+      "trips": 20946
+    },
+    {
+      "day": "Mon",
+      "hour": 22,
+      "trips": 14447
+    },
+    {
+      "day": "Mon",
+      "hour": 23,
+      "trips": 8037
+    },
+    {
+      "day": "Tue",
+      "hour": 0,
+      "trips": 4285
+    },
+    {
+      "day": "Tue",
+      "hour": 1,
+      "trips": 2192
+    },
+    {
+      "day": "Tue",
+      "hour": 2,
+      "trips": 1110
+    },
+    {
+      "day": "Tue",
+      "hour": 3,
+      "trips": 665
+    },
+    {
+      "day": "Tue",
+      "hour": 4,
+      "trips": 1220
+    },
+    {
+      "day": "Tue",
+      "hour": 5,
+      "trips": 5432
+    },
+    {
+      "day": "Tue",
+      "hour": 6,
+      "trips": 16002
+    },
+    {
+      "day": "Tue",
+      "hour": 7,
+      "trips": 39997
+    },
+    {
+      "day": "Tue",
+      "hour": 8,
+      "trips": 68807
+    },
+    {
+      "day": "Tue",
+      "hour": 9,
+      "trips": 40793
+    },
+    {
+      "day": "Tue",
+      "hour": 10,
+      "trips": 26477
+    },
+    {
+      "day": "Tue",
+      "hour": 11,
+      "trips": 26589
+    },
+    {
+      "day": "Tue",
+      "hour": 12,
+      "trips": 30198
+    },
+    {
+      "day": "Tue",
+      "hour": 13,
+      "trips": 30197
+    },
+    {
+      "day": "Tue",
+      "hour": 14,
+      "trips": 32378
+    },
+    {
+      "day": "Tue",
+      "hour": 15,
+      "trips": 41662
+    },
+    {
+      "day": "Tue",
+      "hour": 16,
+      "trips": 61216
+    },
+    {
+      "day": "Tue",
+      "hour": 17,
+      "trips": 85244
+    },
+    {
+      "day": "Tue",
+      "hour": 18,
+      "trips": 64221
+    },
+    {
+      "day": "Tue",
+      "hour": 19,
+      "trips": 45585
+    },
+    {
+      "day": "Tue",
+      "hour": 20,
+      "trips": 30773
+    },
+    {
+      "day": "Tue",
+      "hour": 21,
+      "trips": 23179
+    },
+    {
+      "day": "Tue",
+      "hour": 22,
+      "trips": 15868
+    },
+    {
+      "day": "Tue",
+      "hour": 23,
+      "trips": 9174
+    },
+    {
+      "day": "Wed",
+      "hour": 0,
+      "trips": 4855
+    },
+    {
+      "day": "Wed",
+      "hour": 1,
+      "trips": 2571
+    },
+    {
+      "day": "Wed",
+      "hour": 2,
+      "trips": 1357
+    },
+    {
+      "day": "Wed",
+      "hour": 3,
+      "trips": 788
+    },
+    {
+      "day": "Wed",
+      "hour": 4,
+      "trips": 1209
+    },
+    {
+      "day": "Wed",
+      "hour": 5,
+      "trips": 5440
+    },
+    {
+      "day": "Wed",
+      "hour": 6,
+      "trips": 16096
+    },
+    {
+      "day": "Wed",
+      "hour": 7,
+      "trips": 38450
+    },
+    {
+      "day": "Wed",
+      "hour": 8,
+      "trips": 64549
+    },
+    {
+      "day": "Wed",
+      "hour": 9,
+      "trips": 39571
+    },
+    {
+      "day": "Wed",
+      "hour": 10,
+      "trips": 26693
+    },
+    {
+      "day": "Wed",
+      "hour": 11,
+      "trips": 27769
+    },
+    {
+      "day": "Wed",
+      "hour": 12,
+      "trips": 31916
+    },
+    {
+      "day": "Wed",
+      "hour": 13,
+      "trips": 32238
+    },
+    {
+      "day": "Wed",
+      "hour": 14,
+      "trips": 34753
+    },
+    {
+      "day": "Wed",
+      "hour": 15,
+      "trips": 41965
+    },
+    {
+      "day": "Wed",
+      "hour": 16,
+      "trips": 62484
+    },
+    {
+      "day": "Wed",
+      "hour": 17,
+      "trips": 85812
+    },
+    {
+      "day": "Wed",
+      "hour": 18,
+      "trips": 65891
+    },
+    {
+      "day": "Wed",
+      "hour": 19,
+      "trips": 46760
+    },
+    {
+      "day": "Wed",
+      "hour": 20,
+      "trips": 33228
+    },
+    {
+      "day": "Wed",
+      "hour": 21,
+      "trips": 25045
+    },
+    {
+      "day": "Wed",
+      "hour": 22,
+      "trips": 17404
+    },
+    {
+      "day": "Wed",
+      "hour": 23,
+      "trips": 9738
+    },
+    {
+      "day": "Thu",
+      "hour": 0,
+      "trips": 5166
+    },
+    {
+      "day": "Thu",
+      "hour": 1,
+      "trips": 2845
+    },
+    {
+      "day": "Thu",
+      "hour": 2,
+      "trips": 1454
+    },
+    {
+      "day": "Thu",
+      "hour": 3,
+      "trips": 803
+    },
+    {
+      "day": "Thu",
+      "hour": 4,
+      "trips": 1152
+    },
+    {
+      "day": "Thu",
+      "hour": 5,
+      "trips": 4555
+    },
+    {
+      "day": "Thu",
+      "hour": 6,
+      "trips": 14263
+    },
+    {
+      "day": "Thu",
+      "hour": 7,
+      "trips": 33554
+    },
+    {
+      "day": "Thu",
+      "hour": 8,
+      "trips": 60108
+    },
+    {
+      "day": "Thu",
+      "hour": 9,
+      "trips": 37322
+    },
+    {
+      "day": "Thu",
+      "hour": 10,
+      "trips": 25443
+    },
+    {
+      "day": "Thu",
+      "hour": 11,
+      "trips": 26166
+    },
+    {
+      "day": "Thu",
+      "hour": 12,
+      "trips": 31229
+    },
+    {
+      "day": "Thu",
+      "hour": 13,
+      "trips": 31083
+    },
+    {
+      "day": "Thu",
+      "hour": 14,
+      "trips": 33508
+    },
+    {
+      "day": "Thu",
+      "hour": 15,
+      "trips": 41548
+    },
+    {
+      "day": "Thu",
+      "hour": 16,
+      "trips": 57941
+    },
+    {
+      "day": "Thu",
+      "hour": 17,
+      "trips": 77472
+    },
+    {
+      "day": "Thu",
+      "hour": 18,
+      "trips": 59925
+    },
+    {
+      "day": "Thu",
+      "hour": 19,
+      "trips": 43923
+    },
+    {
+      "day": "Thu",
+      "hour": 20,
+      "trips": 30874
+    },
+    {
+      "day": "Thu",
+      "hour": 21,
+      "trips": 23496
+    },
+    {
+      "day": "Thu",
+      "hour": 22,
+      "trips": 17584
+    },
+    {
+      "day": "Thu",
+      "hour": 23,
+      "trips": 11224
+    },
+    {
+      "day": "Fri",
+      "hour": 0,
+      "trips": 6469
+    },
+    {
+      "day": "Fri",
+      "hour": 1,
+      "trips": 4079
+    },
+    {
+      "day": "Fri",
+      "hour": 2,
+      "trips": 2046
+    },
+    {
+      "day": "Fri",
+      "hour": 3,
+      "trips": 992
+    },
+    {
+      "day": "Fri",
+      "hour": 4,
+      "trips": 1280
+    },
+    {
+      "day": "Fri",
+      "hour": 5,
+      "trips": 4405
+    },
+    {
+      "day": "Fri",
+      "hour": 6,
+      "trips": 11799
+    },
+    {
+      "day": "Fri",
+      "hour": 7,
+      "trips": 27400
+    },
+    {
+      "day": "Fri",
+      "hour": 8,
+      "trips": 47308
+    },
+    {
+      "day": "Fri",
+      "hour": 9,
+      "trips": 36847
+    },
+    {
+      "day": "Fri",
+      "hour": 10,
+      "trips": 28401
+    },
+    {
+      "day": "Fri",
+      "hour": 11,
+      "trips": 31307
+    },
+    {
+      "day": "Fri",
+      "hour": 12,
+      "trips": 37604
+    },
+    {
+      "day": "Fri",
+      "hour": 13,
+      "trips": 40088
+    },
+    {
+      "day": "Fri",
+      "hour": 14,
+      "trips": 40877
+    },
+    {
+      "day": "Fri",
+      "hour": 15,
+      "trips": 48889
+    },
+    {
+      "day": "Fri",
+      "hour": 16,
+      "trips": 60244
+    },
+    {
+      "day": "Fri",
+      "hour": 17,
+      "trips": 70959
+    },
+    {
+      "day": "Fri",
+      "hour": 18,
+      "trips": 58370
+    },
+    {
+      "day": "Fri",
+      "hour": 19,
+      "trips": 45129
+    },
+    {
+      "day": "Fri",
+      "hour": 20,
+      "trips": 32750
+    },
+    {
+      "day": "Fri",
+      "hour": 21,
+      "trips": 26373
+    },
+    {
+      "day": "Fri",
+      "hour": 22,
+      "trips": 24487
+    },
+    {
+      "day": "Fri",
+      "hour": 23,
+      "trips": 18697
+    },
+    {
+      "day": "Sat",
+      "hour": 0,
+      "trips": 13560
+    },
+    {
+      "day": "Sat",
+      "hour": 1,
+      "trips": 11696
+    },
+    {
+      "day": "Sat",
+      "hour": 2,
+      "trips": 7026
+    },
+    {
+      "day": "Sat",
+      "hour": 3,
+      "trips": 2043
+    },
+    {
+      "day": "Sat",
+      "hour": 4,
+      "trips": 1301
+    },
+    {
+      "day": "Sat",
+      "hour": 5,
+      "trips": 2042
+    },
+    {
+      "day": "Sat",
+      "hour": 6,
+      "trips": 4805
+    },
+    {
+      "day": "Sat",
+      "hour": 7,
+      "trips": 8854
+    },
+    {
+      "day": "Sat",
+      "hour": 8,
+      "trips": 16039
+    },
+    {
+      "day": "Sat",
+      "hour": 9,
+      "trips": 25836
+    },
+    {
+      "day": "Sat",
+      "hour": 10,
+      "trips": 34683
+    },
+    {
+      "day": "Sat",
+      "hour": 11,
+      "trips": 40864
+    },
+    {
+      "day": "Sat",
+      "hour": 12,
+      "trips": 45504
+    },
+    {
+      "day": "Sat",
+      "hour": 13,
+      "trips": 47317
+    },
+    {
+      "day": "Sat",
+      "hour": 14,
+      "trips": 49228
+    },
+    {
+      "day": "Sat",
+      "hour": 15,
+      "trips": 51119
+    },
+    {
+      "day": "Sat",
+      "hour": 16,
+      "trips": 48967
+    },
+    {
+      "day": "Sat",
+      "hour": 17,
+      "trips": 46435
+    },
+    {
+      "day": "Sat",
+      "hour": 18,
+      "trips": 42569
+    },
+    {
+      "day": "Sat",
+      "hour": 19,
+      "trips": 37501
+    },
+    {
+      "day": "Sat",
+      "hour": 20,
+      "trips": 28205
+    },
+    {
+      "day": "Sat",
+      "hour": 21,
+      "trips": 22934
+    },
+    {
+      "day": "Sat",
+      "hour": 22,
+      "trips": 20852
+    },
+    {
+      "day": "Sat",
+      "hour": 23,
+      "trips": 17002
+    }
+  ],
+  "topStations": [
+    {
+      "name": "MIT at Mass Ave / Amherst St",
+      "trips": 154784,
+      "lat": 42.3583056,
+      "lng": -71.0932723
+    },
+    {
+      "name": "Central Square at Mass Ave / Essex St",
+      "trips": 121249,
+      "lat": 42.36507,
+      "lng": -71.1031
+    },
+    {
+      "name": "Harvard Square at Mass Ave/ Dunster",
+      "trips": 106366,
+      "lat": 42.373268,
+      "lng": -71.118579
+    },
+    {
+      "name": "Massachusetts Ave at Boylston St.",
+      "trips": 105487,
+      "lat": 42.34752,
+      "lng": -71.088012
+    },
+    {
+      "name": "MIT Vassar St",
+      "trips": 104911,
+      "lat": 42.355601213279265,
+      "lng": -71.10394477844238
+    },
+    {
+      "name": "MIT Pacific St at Purrington St",
+      "trips": 83668,
+      "lat": 42.35957320109044,
+      "lng": -71.10129475593567
+    },
+    {
+      "name": "Ames St at Main St",
+      "trips": 82438,
+      "lat": 42.3625,
+      "lng": -71.08822
+    },
+    {
+      "name": "Charles Circle - Charles St at Cambridge St",
+      "trips": 81576,
+      "lat": 42.36079296858265,
+      "lng": -71.07118962337152
+    },
+    {
+      "name": "Christian Science Plaza - Massachusetts Ave at Westland Ave",
+      "trips": 72545,
+      "lat": 42.3436658245146,
+      "lng": -71.08582377433777
+    },
+    {
+      "name": "Boylston St at Fairfield St",
+      "trips": 72296,
+      "lat": 42.348803822833936,
+      "lng": -71.08236908912659
+    },
+    {
+      "name": "Beacon St at Massachusetts Ave",
+      "trips": 71946,
+      "lat": 42.35082680669095,
+      "lng": -71.0898108780384
+    },
+    {
+      "name": "South Station - 700 Atlantic Ave",
+      "trips": 70865,
+      "lat": 42.352175,
+      "lng": -71.055547
+    },
+    {
+      "name": "Mass Ave/Lafayette Square",
+      "trips": 70758,
+      "lat": 42.363477707,
+      "lng": -71.10040915
+    },
+    {
+      "name": "Commonwealth Ave at Agganis Way",
+      "trips": 68306,
+      "lat": 42.35169201885973,
+      "lng": -71.11903488636017
+    },
+    {
+      "name": "Forsyth St at Huntington Ave",
+      "trips": 64825,
+      "lat": 42.34002048,
+      "lng": -71.09068836
+    },
+    {
+      "name": "MIT Stata Center at Vassar St / Main St",
+      "trips": 64412,
+      "lat": 42.3621312344991,
+      "lng": -71.09115600585936
+    },
+    {
+      "name": "Ruggles T Stop - Columbus Ave at Melnea Cass Blvd",
+      "trips": 63485,
+      "lat": 42.336248994,
+      "lng": -71.088070631
+    },
+    {
+      "name": "Mass Ave at Albany St",
+      "trips": 60892,
+      "lat": 42.36135837662249,
+      "lng": -71.09670273977825
+    },
+    {
+      "name": "Landmark Center - Brookline Ave at Park Dr",
+      "trips": 58403,
+      "lat": 42.343695521,
+      "lng": -71.102496147
+    },
+    {
+      "name": "Kendall T",
+      "trips": 57952,
+      "lat": 42.362427842912396,
+      "lng": -71.08495473861694
+    },
+    {
+      "name": "Boylston St at Jersey St",
+      "trips": 57077,
+      "lat": 42.344678283,
+      "lng": -71.09703958
+    },
+    {
+      "name": "Beacon St at Charles St",
+      "trips": 56686,
+      "lat": 42.356074333,
+      "lng": -71.069708943
+    },
+    {
+      "name": "Central Sq Post Office / Cambridge City Hall at Mass Ave / Pleasant St",
+      "trips": 54235,
+      "lat": 42.366426,
+      "lng": -71.105495
+    },
+    {
+      "name": "Chinatown T Stop",
+      "trips": 54035,
+      "lat": 42.352409,
+      "lng": -71.062679
+    },
+    {
+      "name": "Cambridge St at Joy St",
+      "trips": 51301,
+      "lat": 42.36125721646537,
+      "lng": -71.06528744101524
+    },
+    {
+      "name": "955 Mass Ave",
+      "trips": 50758,
+      "lat": 42.36895180540729,
+      "lng": -71.10998779535294
+    },
+    {
+      "name": "Lower Cambridgeport at Magazine St / Riverside Rd",
+      "trips": 50262,
+      "lat": 42.357218503176526,
+      "lng": -71.1138716340065
+    },
+    {
+      "name": "Back Bay T Stop - Dartmouth St at Stuart St",
+      "trips": 49378,
+      "lat": 42.347801089,
+      "lng": -71.076563239
+    },
+    {
+      "name": "Longwood Ave at Binney St",
+      "trips": 49201,
+      "lat": 42.338411093,
+      "lng": -71.106822014
+    },
+    {
+      "name": "Inman Square at Springfield St.",
+      "trips": 48892,
+      "lat": 42.37426713524931,
+      "lng": -71.10026478767395
+    }
+  ],
+  "stationFlow": [
+    {
+      "name": "Ames St at Main St",
+      "departures": 37735,
+      "arrivals": 44703,
+      "net": 6968
+    },
+    {
+      "name": "MIT Vassar St",
+      "departures": 54501,
+      "arrivals": 50410,
+      "net": -4091
+    },
+    {
+      "name": "Government Center - Cambridge St at Court St",
+      "departures": 21521,
+      "arrivals": 18730,
+      "net": -2791
+    },
+    {
+      "name": "The Overlook at St. Gabriel's",
+      "departures": 5365,
+      "arrivals": 3234,
+      "net": -2131
+    },
+    {
+      "name": "St. Alphonsus St at Tremont St",
+      "departures": 15871,
+      "arrivals": 13797,
+      "net": -2074
+    },
+    {
+      "name": "Longwood Ave at Binney St",
+      "departures": 23580,
+      "arrivals": 25621,
+      "net": 2041
+    },
+    {
+      "name": "Nashua Street at Red Auerbach Way",
+      "departures": 16217,
+      "arrivals": 18242,
+      "net": 2025
+    },
+    {
+      "name": "Boylston St at Arlington St",
+      "departures": 21237,
+      "arrivals": 22985,
+      "net": 1748
+    },
+    {
+      "name": "MIT Pacific St at Purrington St",
+      "departures": 42700,
+      "arrivals": 40968,
+      "net": -1732
+    },
+    {
+      "name": "MIT Hayward St at Amherst St",
+      "departures": 23226,
+      "arrivals": 21552,
+      "net": -1674
+    },
+    {
+      "name": "Broadway at Central St",
+      "departures": 7237,
+      "arrivals": 5587,
+      "net": -1650
+    },
+    {
+      "name": "MIT at Mass Ave / Amherst St",
+      "departures": 78210,
+      "arrivals": 76574,
+      "net": -1636
+    },
+    {
+      "name": "Mass Ave at Albany St",
+      "departures": 31244,
+      "arrivals": 29648,
+      "net": -1596
+    },
+    {
+      "name": "Somerville City Hall",
+      "departures": 6959,
+      "arrivals": 5405,
+      "net": -1554
+    },
+    {
+      "name": "359 Broadway - Broadway at Fayette Street",
+      "departures": 16242,
+      "arrivals": 14702,
+      "net": -1540
+    },
+    {
+      "name": "Sennott Park Broadway at Norfolk Street",
+      "departures": 22368,
+      "arrivals": 20930,
+      "net": -1438
+    },
+    {
+      "name": "Watermark Seaport - Boston Wharf Rd at Seaport Blvd",
+      "departures": 16571,
+      "arrivals": 17997,
+      "net": 1426
+    },
+    {
+      "name": "Craigie St at Summer St",
+      "departures": 4393,
+      "arrivals": 2974,
+      "net": -1419
+    },
+    {
+      "name": "Packard's Corner - Commonwealth Ave at Brighton Ave",
+      "departures": 15467,
+      "arrivals": 16822,
+      "net": 1355
+    },
+    {
+      "name": "Commonwealth Ave at Chiswick Rd",
+      "departures": 5710,
+      "arrivals": 4359,
+      "net": -1351
+    }
+  ],
+  "durationDistribution": [
+    {
+      "bucket": "0-5 min",
+      "count": 738454
+    },
+    {
+      "bucket": "5-10 min",
+      "count": 1435345
+    },
+    {
+      "bucket": "10-15 min",
+      "count": 953333
+    },
+    {
+      "bucket": "15-20 min",
+      "count": 558382
+    },
+    {
+      "bucket": "20-30 min",
+      "count": 521519
+    },
+    {
+      "bucket": "30-60 min",
+      "count": 312317
+    },
+    {
+      "bucket": "60+ min",
+      "count": 91614
+    }
+  ],
+  "municipalityTrips": [
+    {
+      "municipality": "Boston",
+      "trips": 2633258,
+      "member": 1793843,
+      "casual": 839415
+    },
+    {
+      "municipality": "Cambridge",
+      "trips": 1438652,
+      "member": 1130770,
+      "casual": 307882
+    },
+    {
+      "municipality": "Somerville",
+      "trips": 286539,
+      "member": 205921,
+      "casual": 80618
+    },
+    {
+      "municipality": "Brookline",
+      "trips": 117293,
+      "member": 84532,
+      "casual": 32761
+    },
+    {
+      "municipality": "Arlington",
+      "trips": 23362,
+      "member": 14637,
+      "casual": 8725
+    },
+    {
+      "municipality": "Everett",
+      "trips": 23041,
+      "member": 13260,
+      "casual": 9781
+    },
+    {
+      "municipality": "Watertown",
+      "trips": 21741,
+      "member": 13768,
+      "casual": 7973
+    },
+    {
+      "municipality": "Medford",
+      "trips": 17199,
+      "member": 11233,
+      "casual": 5966
+    },
+    {
+      "municipality": "Newton",
+      "trips": 14202,
+      "member": 7793,
+      "casual": 6409
+    },
+    {
+      "municipality": "Salem",
+      "trips": 13011,
+      "member": 4121,
+      "casual": 8890
+    },
+    {
+      "municipality": "Malden",
+      "trips": 10585,
+      "member": 6280,
+      "casual": 4305
+    },
+    {
+      "municipality": "Revere",
+      "trips": 8194,
+      "member": 2507,
+      "casual": 5687
+    },
+    {
+      "municipality": "Chelsea",
+      "trips": 5444,
+      "member": 3209,
+      "casual": 2235
+    },
+    {
+      "municipality": "Hingham",
+      "trips": 72,
+      "member": 65,
+      "casual": 7
+    }
+  ],
+  "userTypeSplit": {
+    "member": 3292780,
+    "casual": 1321161
+  },
+  "monthlyByMunicipality": [
+    {
+      "month": "2025-01",
+      "Boston": 85662,
+      "Cambridge": 57934,
+      "Somerville": 11225,
+      "Revere": 72,
+      "Chelsea": 148,
+      "Hingham": 0
+    },
+    {
+      "month": "2025-02",
+      "Boston": 84920,
+      "Cambridge": 63735,
+      "Somerville": 10551,
+      "Revere": 55,
+      "Chelsea": 115,
+      "Hingham": 0
+    },
+    {
+      "month": "2025-03",
+      "Boston": 147494,
+      "Cambridge": 91902,
+      "Somerville": 18266,
+      "Revere": 245,
+      "Chelsea": 323,
+      "Hingham": 4
+    },
+    {
+      "month": "2025-04",
+      "Boston": 209723,
+      "Cambridge": 122147,
+      "Somerville": 22668,
+      "Revere": 546,
+      "Chelsea": 370,
+      "Hingham": 20
+    },
+    {
+      "month": "2025-05",
+      "Boston": 242313,
+      "Cambridge": 134799,
+      "Somerville": 28301,
+      "Revere": 782,
+      "Chelsea": 471,
+      "Hingham": 11
+    },
+    {
+      "month": "2025-06",
+      "Boston": 287066,
+      "Cambridge": 141323,
+      "Somerville": 31270,
+      "Revere": 1291,
+      "Chelsea": 576,
+      "Hingham": 17
+    },
+    {
+      "month": "2025-07",
+      "Boston": 317173,
+      "Cambridge": 157879,
+      "Somerville": 33205,
+      "Revere": 1517,
+      "Chelsea": 759,
+      "Hingham": 10
+    },
+    {
+      "month": "2025-08",
+      "Boston": 322760,
+      "Cambridge": 158927,
+      "Somerville": 33912,
+      "Revere": 1671,
+      "Chelsea": 900,
+      "Hingham": 3
+    },
+    {
+      "month": "2025-09",
+      "Boston": 339974,
+      "Cambridge": 179534,
+      "Somerville": 34291,
+      "Revere": 978,
+      "Chelsea": 768,
+      "Hingham": 0
+    },
+    {
+      "month": "2025-10",
+      "Boston": 295462,
+      "Cambridge": 158863,
+      "Somerville": 29986,
+      "Revere": 626,
+      "Chelsea": 518,
+      "Hingham": 1
+    },
+    {
+      "month": "2025-11",
+      "Boston": 194037,
+      "Cambridge": 111879,
+      "Somerville": 21033,
+      "Revere": 273,
+      "Chelsea": 350,
+      "Hingham": 4
+    },
+    {
+      "month": "2025-12",
+      "Boston": 106674,
+      "Cambridge": 59730,
+      "Somerville": 11831,
+      "Revere": 138,
+      "Chelsea": 146,
+      "Hingham": 2
+    }
+  ],
+  "trendMunicipalities": {
+    "top3": [
+      "Boston",
+      "Cambridge",
+      "Somerville"
+    ],
+    "bottom3": [
+      "Revere",
+      "Chelsea",
+      "Hingham"
+    ]
+  }
+}
