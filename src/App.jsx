@@ -70,7 +70,7 @@ export default function App() {
             </div>
             <div>
               <h1 className="text-lg font-bold tracking-tight">Bluebikes Dashboard</h1>
-              <p className="text-xs text-blue-pale opacity-80">2025 Trip Data Analysis</p>
+              <p className="text-xs text-blue-pale opacity-80">Group1 Takashi Ban &amp; Tae Jun Cha</p>
             </div>
           </div>
           <p className="text-xs text-gray-400 hidden sm:block">
@@ -122,7 +122,7 @@ export default function App() {
       <footer className="border-t border-gray-200 bg-white mt-8 py-4 px-6">
         <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400">
           <p>Bluebikes 2025 Dashboard &middot; Class Assignment</p>
-          <p>Data: Bluebikes System Data (bluebikes.com)</p>
+          <a href="https://bluebikes.com/system-data" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">Data Source: Bluebikes System Data</a>
         </div>
       </footer>
     </div>
