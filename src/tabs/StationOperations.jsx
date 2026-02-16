@@ -1,35 +1,47 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import ChartCard from '../components/ChartCard';
 import Heatmap from '../components/Heatmap';
 
-function CustomTooltip({ active, payload, label }) {
-  if (!active || !payload?.length) return null;
-  return (
-    <div className="bg-white border border-gray-200 shadow-lg rounded-lg px-3 py-2 text-xs">
-      <p className="font-semibold text-gray-700 mb-1">{label}</p>
-      {payload.map((p, i) => (
-        <p key={i} style={{ color: p.color }}>
-          {p.name}: <span className="font-mono font-semibold">{Math.abs(p.value)?.toLocaleString()}</span>
-        </p>
-      ))}
-    </div>
-  );
-}
+const BUCKET_ORDER = ['0-5 min', '5-10 min', '10-15 min', '15-20 min', '20-30 min', '30-60 min', '60+ min'];
 
 export default function StationOperations({ data }) {
-  const { hourlyByDay, stationFlow, durationDistribution } = data;
+  const { monthlyHourlyByDay, monthlyStationFlow, monthlyDurationDist } = data;
 
-  // Sort station flow by net value for diverging bar
-  const flowData = [...stationFlow]
+  // Aggregate hourly-by-day from filtered monthly data
+  const hourlyMap = {};
+  for (const d of monthlyHourlyByDay) {
+    const key = `${d.day}-${d.hour}`;
+    hourlyMap[key] = (hourlyMap[key] || 0) + d.trips;
+  }
+  const hourlyByDay = Object.entries(hourlyMap).map(([key, trips]) => {
+    const [day, hour] = key.split('-');
+    return { day, hour: parseInt(hour), trips };
+  });
+
+  // Aggregate station flow from filtered monthly data
+  const flowMap = {};
+  for (const s of monthlyStationFlow) {
+    if (!flowMap[s.name]) flowMap[s.name] = { departures: 0, arrivals: 0 };
+    flowMap[s.name].departures += s.departures;
+    flowMap[s.name].arrivals += s.arrivals;
+  }
+  const flowData = Object.entries(flowMap)
+    .map(([name, { departures, arrivals }]) => ({
+      name: name.length > 28 ? name.substring(0, 26) + '…' : name,
+      fullName: name,
+      net: arrivals - departures,
+      arrivals,
+      departures,
+    }))
     .sort((a, b) => b.net - a.net)
-    .slice(0, 15)
-    .map((s) => ({
-      name: s.name.length > 28 ? s.name.substring(0, 26) + '…' : s.name,
-      fullName: s.name,
-      net: s.net,
-      arrivals: s.arrivals,
-      departures: s.departures,
-    }));
+    .slice(0, 15);
+
+  // Aggregate duration distribution from filtered monthly data
+  const durMap = {};
+  for (const d of monthlyDurationDist) {
+    durMap[d.bucket] = (durMap[d.bucket] || 0) + d.count;
+  }
+  const durationDistribution = BUCKET_ORDER.map((bucket) => ({ bucket, count: durMap[bucket] || 0 }));
 
   return (
     <div className="tab-content space-y-5">

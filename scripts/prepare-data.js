@@ -108,6 +108,17 @@ const municipalityCasual = {};
 // Monthly by municipality
 const monthlyMunicipality = {};
 
+// --- Monthly breakdowns for period filtering ---
+const monthlyDuration = {};
+const monthlyStationSets = {};
+const monthlyDowData = {};
+const monthlyHourlyData = {};
+const monthlyStationDep = {};
+const monthlyStationArr = {};
+const monthlyDurDistData = {};
+const monthlyMuniMember = {};
+const monthlyMuniCasual = {};
+
 // Process all CSV files
 const files = fs.readdirSync(DATA_DIR).filter((f) => f.endsWith('.csv')).sort();
 console.log(`Found ${files.length} CSV files`);
@@ -196,6 +207,50 @@ for (const file of files) {
       if (!monthlyMunicipality[muni]) monthlyMunicipality[muni] = {};
       if (!monthlyMunicipality[muni][monthKey]) monthlyMunicipality[muni][monthKey] = 0;
       monthlyMunicipality[muni][monthKey]++;
+
+      // Monthly municipality member/casual
+      if (isMember) {
+        if (!monthlyMuniMember[muni]) monthlyMuniMember[muni] = {};
+        monthlyMuniMember[muni][monthKey] = (monthlyMuniMember[muni][monthKey] || 0) + 1;
+      } else {
+        if (!monthlyMuniCasual[muni]) monthlyMuniCasual[muni] = {};
+        monthlyMuniCasual[muni][monthKey] = (monthlyMuniCasual[muni][monthKey] || 0) + 1;
+      }
+    }
+
+    // --- Monthly breakdowns for period filtering ---
+    // Duration by month & user type
+    if (!monthlyDuration[monthKey]) monthlyDuration[monthKey] = { mS: 0, mC: 0, cS: 0, cC: 0 };
+    if (durationMin > 0 && durationMin < 1440) {
+      if (isMember) { monthlyDuration[monthKey].mS += durationMin; monthlyDuration[monthKey].mC++; }
+      else { monthlyDuration[monthKey].cS += durationMin; monthlyDuration[monthKey].cC++; }
+      // Duration distribution by month
+      if (!monthlyDurDistData[monthKey]) monthlyDurDistData[monthKey] = DURATION_BUCKETS.map(() => 0);
+      for (let b = 0; b < DURATION_BUCKETS.length; b++) {
+        if (durationMin <= DURATION_BUCKETS[b].max) { monthlyDurDistData[monthKey][b]++; break; }
+      }
+    }
+    // Active stations by month
+    if (!monthlyStationSets[monthKey]) monthlyStationSets[monthKey] = new Set();
+    if (startName) monthlyStationSets[monthKey].add(startName);
+    if (endName) monthlyStationSets[monthKey].add(endName);
+    // Day of week by month & user type
+    if (!monthlyDowData[monthKey]) monthlyDowData[monthKey] = {};
+    if (!monthlyDowData[monthKey][dayIdx]) monthlyDowData[monthKey][dayIdx] = { member: 0, casual: 0 };
+    if (isMember) monthlyDowData[monthKey][dayIdx].member++;
+    else monthlyDowData[monthKey][dayIdx].casual++;
+    // Hourly by day by month
+    if (!monthlyHourlyData[monthKey]) monthlyHourlyData[monthKey] = {};
+    const mhdKey = `${dayIdx}-${hour}`;
+    monthlyHourlyData[monthKey][mhdKey] = (monthlyHourlyData[monthKey][mhdKey] || 0) + 1;
+    // Station departures/arrivals by month
+    if (startName) {
+      if (!monthlyStationDep[monthKey]) monthlyStationDep[monthKey] = {};
+      monthlyStationDep[monthKey][startName] = (monthlyStationDep[monthKey][startName] || 0) + 1;
+    }
+    if (endName) {
+      if (!monthlyStationArr[monthKey]) monthlyStationArr[monthKey] = {};
+      monthlyStationArr[monthKey][endName] = (monthlyStationArr[monthKey][endName] || 0) + 1;
     }
   }
 }
@@ -279,6 +334,76 @@ const monthlyByMunicipality = months.map((month) => {
   return entry;
 });
 
+// --- Monthly breakdown outputs for filtering ---
+const monthlyDurationOut = months.map((m) => {
+  const d = monthlyDuration[m] || { mS: 0, mC: 0, cS: 0, cC: 0 };
+  return { month: m, memberDurSum: d.mS, memberDurCount: d.mC, casualDurSum: d.cS, casualDurCount: d.cC };
+});
+
+const monthlyStationCountOut = months.map((m) => ({
+  month: m,
+  count: monthlyStationSets[m] ? monthlyStationSets[m].size : 0,
+}));
+
+const monthlyDowOut = [];
+for (const m of months) {
+  for (const di of [1, 2, 3, 4, 5, 6, 0]) {
+    const d = monthlyDowData[m]?.[di] || { member: 0, casual: 0 };
+    monthlyDowOut.push({ month: m, day: DAY_NAMES[di], member: d.member, casual: d.casual });
+  }
+}
+
+const monthlyHourlyOut = [];
+for (const m of months) {
+  for (let d = 0; d < 7; d++) {
+    for (let h = 0; h < 24; h++) {
+      monthlyHourlyOut.push({ month: m, day: DAY_NAMES[d], hour: h, trips: monthlyHourlyData[m]?.[`${d}-${h}`] || 0 });
+    }
+  }
+}
+
+const top30Names = topStations.map((s) => s.name);
+const monthlyTopStationsOut = [];
+for (const m of months) {
+  for (const name of top30Names) {
+    const dep = monthlyStationDep[m]?.[name] || 0;
+    const arr = monthlyStationArr[m]?.[name] || 0;
+    monthlyTopStationsOut.push({ month: m, name, trips: dep + arr });
+  }
+}
+
+const flowNames = stationFlow.map((s) => s.name);
+const monthlyFlowOut = [];
+for (const m of months) {
+  for (const name of flowNames) {
+    const dep = monthlyStationDep[m]?.[name] || 0;
+    const arr = monthlyStationArr[m]?.[name] || 0;
+    monthlyFlowOut.push({ month: m, name, departures: dep, arrivals: arr, net: arr - dep });
+  }
+}
+
+const monthlyDurDistOut = [];
+for (const m of months) {
+  const bkts = monthlyDurDistData[m] || DURATION_BUCKETS.map(() => 0);
+  for (let i = 0; i < DURATION_BUCKETS.length; i++) {
+    monthlyDurDistOut.push({ month: m, bucket: DURATION_BUCKETS[i].label, count: bkts[i] });
+  }
+}
+
+const allMunis = muniArr.map((x) => x.municipality);
+const monthlyMuniAllOut = [];
+for (const m of months) {
+  for (const muni of allMunis) {
+    monthlyMuniAllOut.push({
+      month: m,
+      municipality: muni,
+      trips: monthlyMunicipality[muni]?.[m] || 0,
+      member: monthlyMuniMember[muni]?.[m] || 0,
+      casual: monthlyMuniCasual[muni]?.[m] || 0,
+    });
+  }
+}
+
 const output = {
   kpis: {
     totalTrips,
@@ -296,6 +421,15 @@ const output = {
   userTypeSplit: { member: memberCount, casual: casualCount },
   monthlyByMunicipality,
   trendMunicipalities: { top3: top3Munis, bottom3: bottom3Munis },
+  // Monthly breakdowns for filtering
+  monthlyDuration: monthlyDurationOut,
+  monthlyStationCount: monthlyStationCountOut,
+  monthlyDayOfWeek: monthlyDowOut,
+  monthlyHourlyByDay: monthlyHourlyOut,
+  monthlyTopStations: monthlyTopStationsOut,
+  monthlyStationFlow: monthlyFlowOut,
+  monthlyDurationDist: monthlyDurDistOut,
+  monthlyMunicipalityAll: monthlyMuniAllOut,
 };
 
 fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });

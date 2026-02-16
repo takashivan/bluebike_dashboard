@@ -2,7 +2,6 @@ import { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-const DAY_MAP = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
 
 export default function Heatmap({ data, width = 700, height = 240 }) {
   const svgRef = useRef();

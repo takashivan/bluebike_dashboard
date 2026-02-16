@@ -40,17 +40,22 @@ export default function App() {
     );
   }
 
-  // Filter data by selected months
+  // Filter all monthly data by selected period
   const monthStart = selectedMonths[0];
   const monthEnd = selectedMonths[1];
+  const inRange = (m) => m.month >= monthStart && m.month <= monthEnd;
   const filteredData = {
     ...data,
-    monthlyTrips: data.monthlyTrips.filter(
-      (m) => m.month >= monthStart && m.month <= monthEnd
-    ),
-    monthlyByMunicipality: data.monthlyByMunicipality.filter(
-      (m) => m.month >= monthStart && m.month <= monthEnd
-    ),
+    monthlyTrips: data.monthlyTrips.filter(inRange),
+    monthlyByMunicipality: data.monthlyByMunicipality.filter(inRange),
+    monthlyDuration: data.monthlyDuration.filter(inRange),
+    monthlyStationCount: data.monthlyStationCount.filter(inRange),
+    monthlyDayOfWeek: data.monthlyDayOfWeek.filter(inRange),
+    monthlyHourlyByDay: data.monthlyHourlyByDay.filter(inRange),
+    monthlyTopStations: data.monthlyTopStations.filter(inRange),
+    monthlyStationFlow: data.monthlyStationFlow.filter(inRange),
+    monthlyDurationDist: data.monthlyDurationDist.filter(inRange),
+    monthlyMunicipalityAll: data.monthlyMunicipalityAll.filter(inRange),
   };
 
   const months = data.monthlyTrips.map((m) => m.month);
@@ -98,7 +103,7 @@ export default function App() {
           ))}
         </nav>
 
-        {/* Filters (hidden on About tab) */}
+        {/* Filters (shown on all content tabs) */}
         {activeTab !== 'about' && (
           <div className="mb-5">
             <FilterBar
@@ -107,6 +112,7 @@ export default function App() {
               onMonthChange={setSelectedMonths}
               userType={userType}
               onUserTypeChange={setUserType}
+              showUserType={activeTab !== 'stations'}
             />
           </div>
         )}

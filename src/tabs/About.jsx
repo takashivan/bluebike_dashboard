@@ -26,7 +26,7 @@ export default function About() {
       <Section icon={Target} title="Problem Statement" accent="navy">
         <p className="text-sm text-gray-600 leading-relaxed">
           Boston's Bluebikes system logged over 4.7 million trips in 2024 with continued growth in 2025.
-          However, ridership is unevenly distributed across the 13-municipality service area. Stations
+          However, ridership is unevenly distributed across the 12-municipality service area. Stations
           near Harvard and MIT see 40,000+ commute-time trips each, while neighborhoods like Roxbury and
           Dorchester see dramatically lower usage due to insufficient cycling infrastructure and station
           gaps. City planners and operations managers lack a unified, interactive view connecting ridership
@@ -41,7 +41,7 @@ export default function About() {
             Operations Manager — Bluebikes / Lyft
           </p>
           <p className="text-sm text-gray-600 leading-relaxed mb-3">
-            Manages 4,000+ bikes across 400+ stations. Needs to predict which stations will empty or
+            Manages 4,000+ bikes across 620+ stations. Needs to predict which stations will empty or
             overflow by rush hour. Currently relies on manual CSV exports and Excel charts.
           </p>
           <div className="bg-gray-50 rounded-lg p-3">

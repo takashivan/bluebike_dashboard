@@ -27,16 +27,28 @@ function CustomTooltip({ active, payload, label }) {
 }
 
 export default function EquityAccess({ data, userType }) {
-  const { municipalityTrips, monthlyByMunicipality, trendMunicipalities } = data;
+  const { monthlyByMunicipality, trendMunicipalities, monthlyMunicipalityAll } = data;
 
-  const barData = municipalityTrips.map((m) => ({
+  // Aggregate municipality data from filtered monthly data
+  const muniMap = {};
+  for (const d of monthlyMunicipalityAll) {
+    if (!muniMap[d.municipality]) muniMap[d.municipality] = { trips: 0, member: 0, casual: 0 };
+    muniMap[d.municipality].trips += d.trips;
+    muniMap[d.municipality].member += d.member;
+    muniMap[d.municipality].casual += d.casual;
+  }
+  const muniArr = Object.entries(muniMap)
+    .map(([municipality, { trips, member, casual }]) => ({ municipality, trips, member, casual }))
+    .sort((a, b) => b.trips - a.trips);
+
+  // Bar data respects userType filter
+  const barData = muniArr.map((m) => ({
     municipality: m.municipality,
     trips: userType === 'Member' ? m.member : userType === 'Casual' ? m.casual : m.trips,
-    member: m.member,
-    casual: m.casual,
   }));
 
-  const splitData = municipalityTrips.map((m) => ({
+  // Stacked bar always shows both types (its purpose is to compare)
+  const splitData = muniArr.map((m) => ({
     municipality: m.municipality,
     Member: m.member,
     Casual: m.casual,
