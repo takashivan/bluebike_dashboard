@@ -44,18 +44,19 @@ export default function App() {
   const monthStart = selectedMonths[0];
   const monthEnd = selectedMonths[1];
   const inRange = (m) => m.month >= monthStart && m.month <= monthEnd;
+  const f = (arr) => (arr || []).filter(inRange);
   const filteredData = {
     ...data,
-    monthlyTrips: data.monthlyTrips.filter(inRange),
-    monthlyByMunicipality: data.monthlyByMunicipality.filter(inRange),
-    monthlyDuration: data.monthlyDuration.filter(inRange),
-    monthlyStationCount: data.monthlyStationCount.filter(inRange),
-    monthlyDayOfWeek: data.monthlyDayOfWeek.filter(inRange),
-    monthlyHourlyByDay: data.monthlyHourlyByDay.filter(inRange),
-    monthlyTopStations: data.monthlyTopStations.filter(inRange),
-    monthlyStationFlow: data.monthlyStationFlow.filter(inRange),
-    monthlyDurationDist: data.monthlyDurationDist.filter(inRange),
-    monthlyMunicipalityAll: data.monthlyMunicipalityAll.filter(inRange),
+    monthlyTrips: f(data.monthlyTrips),
+    monthlyByMunicipality: f(data.monthlyByMunicipality),
+    monthlyDuration: f(data.monthlyDuration),
+    monthlyStationCount: f(data.monthlyStationCount),
+    monthlyDayOfWeek: f(data.monthlyDayOfWeek),
+    monthlyHourlyByDay: f(data.monthlyHourlyByDay),
+    monthlyTopStations: f(data.monthlyTopStations),
+    monthlyStationFlow: f(data.monthlyStationFlow),
+    monthlyDurationDist: f(data.monthlyDurationDist),
+    monthlyMunicipalityAll: f(data.monthlyMunicipalityAll),
   };
 
   const months = data.monthlyTrips.map((m) => m.month);

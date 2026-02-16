@@ -28,7 +28,10 @@ function CustomTooltip({ active, payload, label }) {
 }
 
 export default function SystemOverview({ data, userType }) {
-  const { monthlyTrips, monthlyDuration, monthlyStationCount, monthlyDayOfWeek, monthlyTopStations, topStations } = data;
+  const {
+    monthlyTrips = [], monthlyDuration = [], monthlyStationCount = [],
+    monthlyDayOfWeek = [], monthlyTopStations = [], topStations = [],
+  } = data;
 
   // --- KPIs: computed dynamically from filtered monthly data ---
   const totalMember = monthlyTrips.reduce((s, m) => s + m.member, 0);

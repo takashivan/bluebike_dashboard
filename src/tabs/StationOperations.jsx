@@ -5,7 +5,7 @@ import Heatmap from '../components/Heatmap';
 const BUCKET_ORDER = ['0-5 min', '5-10 min', '10-15 min', '15-20 min', '20-30 min', '30-60 min', '60+ min'];
 
 export default function StationOperations({ data }) {
-  const { monthlyHourlyByDay, monthlyStationFlow, monthlyDurationDist } = data;
+  const { monthlyHourlyByDay = [], monthlyStationFlow = [], monthlyDurationDist = [] } = data;
 
   // Aggregate hourly-by-day from filtered monthly data
   const hourlyMap = {};

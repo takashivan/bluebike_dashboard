@@ -27,7 +27,7 @@ function CustomTooltip({ active, payload, label }) {
 }
 
 export default function EquityAccess({ data, userType }) {
-  const { monthlyByMunicipality, trendMunicipalities, monthlyMunicipalityAll } = data;
+  const { monthlyByMunicipality = [], trendMunicipalities = { top3: [], bottom3: [] }, monthlyMunicipalityAll = [] } = data;
 
   // Aggregate municipality data from filtered monthly data
   const muniMap = {};
