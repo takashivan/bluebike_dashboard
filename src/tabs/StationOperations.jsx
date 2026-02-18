@@ -4,6 +4,12 @@ import Heatmap from '../components/Heatmap';
 
 const BUCKET_ORDER = ['0-5 min', '5-10 min', '10-15 min', '15-20 min', '20-30 min', '30-60 min', '60+ min'];
 
+function Insight({ children }) {
+  return (
+    <p className="text-xs text-gray-500 italic bg-gray-50 rounded-lg px-3 py-2 mt-3">{children}</p>
+  );
+}
+
 export default function StationOperations({ data }) {
   const { monthlyHourlyByDay = [], monthlyStationFlow = [], monthlyDurationDist = [] } = data;
 
@@ -43,12 +49,17 @@ export default function StationOperations({ data }) {
   }
   const durationDistribution = BUCKET_ORDER.map((bucket) => ({ bucket, count: durMap[bucket] || 0 }));
 
+  // Duration insight
+  const totalDurTrips = durationDistribution.reduce((s, d) => s + d.count, 0);
+  const under15 = durationDistribution.slice(0, 3).reduce((s, d) => s + d.count, 0);
+  const under15pct = totalDurTrips > 0 ? Math.round((under15 / totalDurTrips) * 100) : 0;
+
   return (
     <div className="tab-content space-y-5">
       {/* Heatmap */}
       <ChartCard
         title="Trip Volume Heatmap"
-        subtitle="Hour of day vs day of week — darker cells indicate higher trip volume"
+        subtitle="When do people ride? Rush-hour commutes light up the weekday mornings and evenings"
       >
         <div className="overflow-x-auto">
           <Heatmap data={hourlyByDay} width={780} height={260} />
@@ -62,13 +73,16 @@ export default function StationOperations({ data }) {
           </div>
           <span>High</span>
         </div>
+        <Insight>
+          The 8 AM and 5 PM weekday peaks reveal Boston's bike commuters heading to work and back. Weekends show a midday leisure pattern instead.
+        </Insight>
       </ChartCard>
 
       {/* Flow + Duration row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         <ChartCard
           title="Station Net Flow"
-          subtitle="Arrivals minus departures — green = net inflow, red = net outflow"
+          subtitle="Where do bikes pile up? Green stations need fewer bikes, red stations need more"
         >
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={flowData} layout="vertical" margin={{ left: 10, right: 20 }}>
@@ -103,11 +117,14 @@ export default function StationOperations({ data }) {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
+          <Insight>
+            Rebalancing crews use this data to move bikes from overflow stations (green) to high-demand ones (red) — keeping docks available for the next rider.
+          </Insight>
         </ChartCard>
 
         <ChartCard
           title="Trip Duration Distribution"
-          subtitle="Histogram of trip lengths in minutes"
+          subtitle="Most rides are quick trips — errands, commutes, or connecting to the T"
         >
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={durationDistribution}>
@@ -128,6 +145,11 @@ export default function StationOperations({ data }) {
               <Bar dataKey="count" fill="#2E86DE" radius={[4, 4, 0, 0]} name="Trips" />
             </BarChart>
           </ResponsiveContainer>
+          {under15pct > 0 && (
+            <Insight>
+              {under15pct}% of all rides are under 15 minutes — bikeshare works as a "last mile" solution, getting people from transit stops to their final destination.
+            </Insight>
+          )}
         </ChartCard>
       </div>
     </div>

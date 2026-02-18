@@ -1,4 +1,4 @@
-export default function KpiCard({ label, value, icon: Icon, color = 'blue' }) {
+export default function KpiCard({ label, value, detail, icon: Icon, color = 'blue' }) {
   const colorMap = {
     blue: 'bg-blue-pale text-blue',
     orange: 'bg-orange-light/20 text-orange',
@@ -13,6 +13,7 @@ export default function KpiCard({ label, value, icon: Icon, color = 'blue' }) {
       <div>
         <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">{label}</p>
         <p className="text-2xl font-bold text-gray-800 font-mono mt-0.5">{value}</p>
+        {detail && <p className="text-[11px] text-gray-400 mt-0.5">{detail}</p>}
       </div>
     </div>
   );

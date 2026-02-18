@@ -26,6 +26,12 @@ function CustomTooltip({ active, payload, label }) {
   );
 }
 
+function Insight({ children }) {
+  return (
+    <p className="text-xs text-gray-500 italic bg-gray-50 rounded-lg px-3 py-2 mt-3">{children}</p>
+  );
+}
+
 export default function EquityAccess({ data, userType }) {
   const { monthlyByMunicipality = [], trendMunicipalities = { top3: [], bottom3: [] }, monthlyMunicipalityAll = [] } = data;
 
@@ -41,18 +47,32 @@ export default function EquityAccess({ data, userType }) {
     .map(([municipality, { trips, member, casual }]) => ({ municipality, trips, member, casual }))
     .sort((a, b) => b.trips - a.trips);
 
-  // Bar data respects userType filter
   const barData = muniArr.map((m) => ({
     municipality: m.municipality,
     trips: userType === 'Member' ? m.member : userType === 'Casual' ? m.casual : m.trips,
   }));
 
-  // Stacked bar always shows both types (its purpose is to compare)
   const splitData = muniArr.map((m) => ({
     municipality: m.municipality,
     Member: m.member,
     Casual: m.casual,
   }));
+
+  // Equity gap insight
+  const topMuni = muniArr[0];
+  const botMunis = muniArr.filter((m) => m.municipality !== 'Other');
+  const botMuni = botMunis[botMunis.length - 1];
+  const gapRatio = topMuni && botMuni && botMuni.trips > 0
+    ? Math.round(topMuni.trips / botMuni.trips)
+    : 0;
+
+  // Highest casual % municipality
+  const highCasualMuni = muniArr
+    .filter((m) => m.trips > 1000 && m.municipality !== 'Other')
+    .sort((a, b) => (b.casual / b.trips) - (a.casual / a.trips))[0];
+  const casualPct = highCasualMuni
+    ? Math.round((highCasualMuni.casual / highCasualMuni.trips) * 100)
+    : 0;
 
   return (
     <div className="tab-content space-y-5">
@@ -60,7 +80,7 @@ export default function EquityAccess({ data, userType }) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         <ChartCard
           title="Trips by Municipality"
-          subtitle="Total trip volume originating from each municipality"
+          subtitle="Where are people riding? Trip volume reveals which communities bikeshare serves most"
         >
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={barData} layout="vertical" margin={{ left: 10, right: 20 }}>
@@ -71,11 +91,16 @@ export default function EquityAccess({ data, userType }) {
               <Bar dataKey="trips" fill="#2E86DE" radius={[0, 4, 4, 0]} name="Trips" />
             </BarChart>
           </ResponsiveContainer>
+          {gapRatio > 1 && (
+            <Insight>
+              {topMuni.municipality} sees {gapRatio}x more rides than {botMuni.municipality} — highlighting the access gap between well-connected urban cores and underserved outer communities.
+            </Insight>
+          )}
         </ChartCard>
 
         <ChartCard
           title="Member vs Casual by Municipality"
-          subtitle="Stacked user type breakdown per municipality"
+          subtitle="Do residents commute or do visitors explore? The member/casual split tells the story"
         >
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={splitData} layout="vertical" margin={{ left: 10, right: 20 }}>
@@ -88,13 +113,18 @@ export default function EquityAccess({ data, userType }) {
               <Bar dataKey="Casual" stackId="a" fill="#E67E22" radius={[0, 4, 4, 0]} name="Casual" />
             </BarChart>
           </ResponsiveContainer>
+          {highCasualMuni && (
+            <Insight>
+              {highCasualMuni.municipality} has the highest casual rider share ({casualPct}%) — likely driven by tourism, university visitors, or residents who haven't yet committed to a membership.
+            </Insight>
+          )}
         </ChartCard>
       </div>
 
       {/* Trend chart */}
       <ChartCard
         title="Monthly Trends: Top 3 vs Bottom 3 Municipalities"
-        subtitle="Tracking whether the ridership gap between high- and low-usage municipalities is closing or widening"
+        subtitle="Is the gap closing? Tracking whether bikeshare expansion is reaching underserved areas"
       >
         <ResponsiveContainer width="100%" height={340}>
           <AreaChart data={monthlyByMunicipality}>
@@ -130,6 +160,9 @@ export default function EquityAccess({ data, userType }) {
             ))}
           </AreaChart>
         </ResponsiveContainer>
+        <Insight>
+          Solid lines (top municipalities) and dashed lines (bottom) reveal whether investment in new stations and bike lanes is helping close the ridership gap across Greater Boston's diverse communities.
+        </Insight>
       </ChartCard>
     </div>
   );

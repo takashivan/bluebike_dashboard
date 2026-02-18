@@ -950,8 +950,8 @@
     {
       "name": "MIT at Mass Ave / Amherst St",
       "trips": 154784,
-      "lat": 42.3583056,
-      "lng": -71.0932723
+      "lat": 42.3581,
+      "lng": -71.093198
     },
     {
       "name": "Central Square at Mass Ave / Essex St",
@@ -992,8 +992,8 @@
     {
       "name": "Charles Circle - Charles St at Cambridge St",
       "trips": 81576,
-      "lat": 42.36079296858265,
-      "lng": -71.07118962337152
+      "lat": 42.360759377,
+      "lng": -71.071254849
     },
     {
       "name": "Christian Science Plaza - Massachusetts Ave at Westland Ave",
@@ -1022,20 +1022,20 @@
     {
       "name": "Mass Ave/Lafayette Square",
       "trips": 70758,
-      "lat": 42.363477707,
-      "lng": -71.10040915
+      "lat": 42.363455772,
+      "lng": -71.100408077
     },
     {
       "name": "Commonwealth Ave at Agganis Way",
       "trips": 68306,
-      "lat": 42.35169201885973,
-      "lng": -71.11903488636017
+      "lat": 42.35174799,
+      "lng": -71.118956447
     },
     {
       "name": "Forsyth St at Huntington Ave",
       "trips": 64825,
-      "lat": 42.34002048,
-      "lng": -71.09068836
+      "lat": 42.339202,
+      "lng": -71.090511
     },
     {
       "name": "MIT Stata Center at Vassar St / Main St",
@@ -1046,38 +1046,38 @@
     {
       "name": "Ruggles T Stop - Columbus Ave at Melnea Cass Blvd",
       "trips": 63485,
-      "lat": 42.336248994,
-      "lng": -71.088070631
+      "lat": 42.33624444796878,
+      "lng": -71.08798563480377
     },
     {
       "name": "Mass Ave at Albany St",
       "trips": 60892,
-      "lat": 42.36135837662249,
-      "lng": -71.09670273977825
+      "lat": 42.36129868,
+      "lng": -71.096429825
     },
     {
       "name": "Landmark Center - Brookline Ave at Park Dr",
       "trips": 58403,
-      "lat": 42.343695521,
-      "lng": -71.102496147
+      "lat": 42.34369055719747,
+      "lng": -71.10235286881107
     },
     {
       "name": "Kendall T",
       "trips": 57952,
-      "lat": 42.362427842912396,
+      "lat": 42.3624278429124,
       "lng": -71.08495473861694
     },
     {
       "name": "Boylston St at Jersey St",
       "trips": 57077,
-      "lat": 42.344678283,
-      "lng": -71.09703958
+      "lat": 42.344650628878306,
+      "lng": -71.09732501226972
     },
     {
       "name": "Beacon St at Charles St",
       "trips": 56686,
-      "lat": 42.356074333,
-      "lng": -71.069708943
+      "lat": 42.356052,
+      "lng": -71.069849
     },
     {
       "name": "Central Sq Post Office / Cambridge City Hall at Mass Ave / Pleasant St",
@@ -1112,14 +1112,14 @@
     {
       "name": "Back Bay T Stop - Dartmouth St at Stuart St",
       "trips": 49378,
-      "lat": 42.347801089,
-      "lng": -71.076563239
+      "lat": 42.34807412317439,
+      "lng": -71.07657015323639
     },
     {
       "name": "Longwood Ave at Binney St",
       "trips": 49201,
-      "lat": 42.338411093,
-      "lng": -71.106822014
+      "lat": 42.338629,
+      "lng": -71.1065
     },
     {
       "name": "Inman Square at Springfield St.",
@@ -1253,31 +1253,31 @@
   "durationDistribution": [
     {
       "bucket": "0-5 min",
-      "count": 738454
+      "count": 738456
     },
     {
       "bucket": "5-10 min",
-      "count": 1435345
+      "count": 1435343
     },
     {
       "bucket": "10-15 min",
-      "count": 953333
+      "count": 953330
     },
     {
       "bucket": "15-20 min",
-      "count": 558382
+      "count": 558385
     },
     {
       "bucket": "20-30 min",
-      "count": 521519
+      "count": 521526
     },
     {
       "bucket": "30-60 min",
-      "count": 312317
+      "count": 312319
     },
     {
       "bucket": "60+ min",
-      "count": 91614
+      "count": 91619
     }
   ],
   "municipalityTrips": [
@@ -1495,86 +1495,86 @@
   "monthlyDuration": [
     {
       "month": "2025-01",
-      "memberDurSum": 1591665.8625999948,
+      "memberDurSum": 1591665.8626,
       "memberDurCount": 140587,
-      "casualDurSum": 358844.4361999973,
+      "casualDurSum": 358844.4362,
       "casualDurCount": 21606
     },
     {
       "month": "2025-02",
-      "memberDurSum": 1608662.9855166913,
+      "memberDurSum": 1608662.9855166667,
       "memberDurCount": 142628,
-      "casualDurSum": 396142.8212333341,
+      "casualDurSum": 396142.8212333333,
       "casualDurCount": 23317
     },
     {
       "month": "2025-03",
-      "memberDurSum": 2537760.50443333,
+      "memberDurSum": 2538240.5044333334,
       "memberDurCount": 213111,
-      "casualDurSum": 1259200.296683353,
+      "casualDurSum": 1259800.2966833333,
       "casualDurCount": 58797
     },
     {
       "month": "2025-04",
-      "memberDurSum": 3343492.9954332854,
+      "memberDurSum": 3343492.9954333333,
       "memberDurCount": 271711,
-      "casualDurSum": 2361151.542833345,
+      "casualDurSum": 2361151.5428333334,
       "casualDurCount": 102021
     },
     {
       "month": "2025-05",
-      "memberDurSum": 3798770.484599984,
+      "memberDurSum": 3798770.4846,
       "memberDurCount": 296017,
-      "casualDurSum": 3165572.987733306,
+      "casualDurSum": 3165572.9877333334,
       "casualDurCount": 133511
     },
     {
       "month": "2025-06",
-      "memberDurSum": 4401024.900433252,
+      "memberDurSum": 4401024.900433334,
       "memberDurCount": 330837,
-      "casualDurSum": 3801462.085066725,
+      "casualDurSum": 3801462.085066667,
       "casualDurCount": 157009
     },
     {
       "month": "2025-07",
-      "memberDurSum": 4789862.748799908,
+      "memberDurSum": 4789862.7488,
       "memberDurCount": 357675,
-      "casualDurSum": 4553492.584466671,
+      "casualDurSum": 4553492.584466667,
       "casualDurCount": 181482
     },
     {
       "month": "2025-08",
-      "memberDurSum": 4807248.961216681,
+      "memberDurSum": 4807248.961216667,
       "memberDurCount": 358185,
-      "casualDurSum": 4610839.498966621,
+      "casualDurSum": 4610839.498966667,
       "casualDurCount": 190537
     },
     {
       "month": "2025-09",
-      "memberDurSum": 5178893.757316642,
+      "memberDurSum": 5178893.757316667,
       "memberDurCount": 403800,
-      "casualDurSum": 3953866.9023000677,
+      "casualDurSum": 3953866.9023,
       "casualDurCount": 182737
     },
     {
       "month": "2025-10",
-      "memberDurSum": 4464350.737200024,
+      "memberDurSum": 4464350.7372,
       "memberDurCount": 362151,
-      "casualDurSum": 3169294.8508500047,
+      "casualDurSum": 3169294.85085,
       "casualDurCount": 151154
     },
     {
       "month": "2025-11",
-      "memberDurSum": 3105249.711050046,
-      "memberDurCount": 261339,
-      "casualDurSum": 1533216.2255499978,
-      "casualDurCount": 83084
+      "memberDurSum": 3105549.425816667,
+      "memberDurCount": 261340,
+      "casualDurSum": 1550200.2482166667,
+      "casualDurCount": 83097
     },
     {
       "month": "2025-12",
-      "memberDurSum": 1764544.3969000124,
+      "memberDurSum": 1764544.3969,
       "memberDurCount": 154021,
-      "casualDurSum": 535935.8729000038,
+      "casualDurSum": 535935.8729,
       "casualDurCount": 33647
     }
   ],
@@ -17790,37 +17790,37 @@
     {
       "month": "2025-03",
       "bucket": "0-5 min",
-      "count": 49450
+      "count": 49449
     },
     {
       "month": "2025-03",
       "bucket": "5-10 min",
-      "count": 90647
+      "count": 90642
     },
     {
       "month": "2025-03",
       "bucket": "10-15 min",
-      "count": 56073
+      "count": 56069
     },
     {
       "month": "2025-03",
       "bucket": "15-20 min",
-      "count": 30843
+      "count": 30842
     },
     {
       "month": "2025-03",
       "bucket": "20-30 min",
-      "count": 26702
+      "count": 26701
     },
     {
       "month": "2025-03",
       "bucket": "30-60 min",
-      "count": 14272
+      "count": 14267
     },
     {
       "month": "2025-03",
       "bucket": "60+ min",
-      "count": 3921
+      "count": 3938
     },
     {
       "month": "2025-04",
@@ -18070,37 +18070,37 @@
     {
       "month": "2025-11",
       "bucket": "0-5 min",
-      "count": 65545
+      "count": 65548
     },
     {
       "month": "2025-11",
       "bucket": "5-10 min",
-      "count": 116878
+      "count": 116881
     },
     {
       "month": "2025-11",
       "bucket": "10-15 min",
-      "count": 70272
+      "count": 70273
     },
     {
       "month": "2025-11",
       "bucket": "15-20 min",
-      "count": 38176
+      "count": 38180
     },
     {
       "month": "2025-11",
       "bucket": "20-30 min",
-      "count": 32716
+      "count": 32724
     },
     {
       "month": "2025-11",
       "bucket": "30-60 min",
-      "count": 16730
+      "count": 16737
     },
     {
       "month": "2025-11",
       "bucket": "60+ min",
-      "count": 4106
+      "count": 4094
     },
     {
       "month": "2025-12",
