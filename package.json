@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare-data": "node scripts/prepare-data.js",
+    "prepare-data": "python3 scripts/prepare_data.py",
+    "prepare-data:node": "node scripts/prepare-data.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

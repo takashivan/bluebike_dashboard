@@ -1,16 +1,90 @@
-# React + Vite
+# Bluebikes Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive data visualization dashboard analyzing 4.6 million Bluebikes trips across Greater Boston's 12-municipality service area (January–December 2025).
 
-Currently, two official plugins are available:
+**Live Dashboard:** [takashivan.github.io/bluebike_dashboard](https://takashivan.github.io/bluebike_dashboard/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## User Stories
 
-## React Compiler
+1. **Operations Manager** — *As an operations manager at Bluebikes, I want to see hourly and daily trip volume patterns filtered by time period so that I can predict which stations will run empty or overflow during rush hours and optimize bike rebalancing routes accordingly.*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. **Transportation Planner** — *As a city transportation planner, I want to compare ridership volumes and member-vs-casual ratios across all 12 municipalities so that I can identify underserved areas and present data-driven evidence to the city council for prioritizing new station placements.*
 
-## Expanding the ESLint configuration
+## Dashboard Tabs
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Tab | Purpose |
+|-----|---------|
+| **System Overview** | KPIs, monthly ridership trends, user type split, day-of-week patterns, top stations |
+| **Station Operations** | Hourly heatmap, station net flow (rebalancing needs), trip duration distribution |
+| **Equity & Access** | Municipality ridership comparison, member/casual breakdown, top-3 vs bottom-3 trend analysis |
+| **About** | Problem statement, personas, design notes |
+
+All charts respond to **period** and **user type** filters — KPIs, charts, and insights update dynamically.
+
+## Data Pipeline
+
+```
+Bluebikes System Data (CSV)  →  prepare_data.py (pandas)  →  bluebikes-2025.json  →  React Dashboard
+```
+
+| Step | Tool | Automated? |
+|------|------|------------|
+| Download monthly CSV files | Manual from [bluebikes.com/system-data](https://bluebikes.com/system-data) | Manual (published monthly) |
+| Aggregate 4.6M rows into JSON | `python scripts/prepare_data.py` | Automated |
+| Build & deploy dashboard | GitHub Actions → GitHub Pages | Automated on `git push` |
+
+## Project Structure
+
+```
+├── scripts/
+│   ├── prepare_data.py       # Python/pandas data pipeline (primary)
+│   └── prepare-data.js       # Node.js equivalent pipeline
+├── public/data/
+│   └── bluebikes-2025.json   # Pre-aggregated dashboard data (329 KB)
+├── src/
+│   ├── App.jsx               # Main app, filter state, tab routing
+│   ├── components/           # Reusable UI components
+│   │   ├── ChartCard.jsx     # Card wrapper for charts
+│   │   ├── FilterBar.jsx     # Period & user type filters
+│   │   ├── Heatmap.jsx       # D3-based hour×day heatmap
+│   │   └── KpiCard.jsx       # Metric card with context detail
+│   └── tabs/                 # Tab content
+│       ├── SystemOverview.jsx
+│       ├── StationOperations.jsx
+│       ├── EquityAccess.jsx
+│       └── About.jsx
+├── .github/workflows/
+│   └── deploy.yml            # GitHub Pages CI/CD
+└── BluebikeData_2025/        # Source CSVs (gitignored)
+```
+
+## Tech Stack
+
+- **Frontend:** React 19, Recharts, D3.js, Tailwind CSS 4
+- **Data Processing:** Python (pandas) / Node.js (csv-parse)
+- **Build:** Vite 7
+- **Deployment:** GitHub Pages via GitHub Actions
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+pip install pandas
+
+# Process data (either command produces the same output)
+python scripts/prepare_data.py
+# or: node scripts/prepare-data.js
+
+# Run dev server
+npm run dev
+```
+
+## Data Source
+
+[Bluebikes System Data](https://bluebikes.com/system-data) — January through December 2025 trip data, 4,613,941 trips across 622 stations in 12 municipalities.
+
+## Team
+
+- **Takashi Ban**
+- **Tae Jun Cha**

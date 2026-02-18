@@ -25,3 +25,10 @@ dist-ssr
 
 # Data files
 BluebikeData_2025/
+
+# Claude Code
+.claude/
+
+# Python
+__pycache__/
+*.pyc
