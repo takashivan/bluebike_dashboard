@@ -6,9 +6,9 @@ An interactive data visualization dashboard analyzing 4.6 million Bluebikes trip
 
 ## User Stories
 
-1. **Operations Manager** — *As an operations manager at Bluebikes, I want to see hourly and daily trip volume patterns filtered by time period so that I can predict which stations will run empty or overflow during rush hours and optimize bike rebalancing routes accordingly.*
+1. **Marketing Manager** — *As a Bluebikes marketing manager, I want to see how ridership changes month to month and when casual rider usage peaks, so I can time our membership promotions to convert the most casual riders into annual members.*
 
-2. **Transportation Planner** — *As a city transportation planner, I want to compare ridership volumes and member-vs-casual ratios across all 12 municipalities so that I can identify underserved areas and present data-driven evidence to the city council for prioritizing new station placements.*
+2. **Bluebikes Rider** — *As a Bluebikes rider, I want to see which times of day are busiest and which stations are the most popular, so I can plan my rides to avoid crowds and find available bikes more easily.*
 
 ## Dashboard Tabs
 

@@ -36,55 +36,55 @@ export default function About() {
       </Section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <Section icon={User} title="Persona 1: Maria Chen" accent="blue">
+        <Section icon={User} title="Persona 1: Marketing Manager" accent="blue">
           <p className="text-xs font-semibold text-blue uppercase tracking-wide mb-2">
-            Operations Manager — Bluebikes / Lyft
+            Marketing Manager — Bluebikes
           </p>
           <p className="text-sm text-gray-600 leading-relaxed mb-3">
-            Manages 4,000+ bikes across 620+ stations. Needs to predict which stations will empty or
-            overflow by rush hour. Currently relies on manual CSV exports and Excel charts.
+            Runs membership campaigns to grow annual subscribers. Needs to understand seasonal ridership
+            trends and when casual rider usage peaks to time promotions effectively.
           </p>
           <div className="bg-gray-50 rounded-lg p-3">
             <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Goals</p>
             <ul className="text-sm text-gray-600 space-y-1">
               <li className="flex items-start gap-2">
                 <span className="text-blue mt-0.5">•</span>
-                Reduce empty/full station events
+                Track monthly ridership trends by user type
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue mt-0.5">•</span>
-                Understand seasonal demand shifts
+                Identify peak casual rider months for promotions
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue mt-0.5">•</span>
-                Compare member vs casual patterns
+                Monitor member-to-casual conversion over time
               </li>
             </ul>
           </div>
         </Section>
 
-        <Section icon={User} title="Persona 2: David Torres" accent="orange">
+        <Section icon={User} title="Persona 2: Bluebikes Rider" accent="orange">
           <p className="text-xs font-semibold text-orange uppercase tracking-wide mb-2">
-            Transportation Planner — City of Boston
+            Daily Commuter — Bluebikes Rider
           </p>
           <p className="text-sm text-gray-600 leading-relaxed mb-3">
-            Supports the city's 100-station expansion initiative. Evaluates whether new stations serve
-            underserved communities equitably. Currently merges CSVs with GIS shapefiles manually.
+            Uses Bluebikes for daily commuting and weekend errands. Wants to know when the system is
+            busiest and which stations are most popular to plan rides and avoid empty docks.
           </p>
           <div className="bg-gray-50 rounded-lg p-3">
             <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Goals</p>
             <ul className="text-sm text-gray-600 space-y-1">
               <li className="flex items-start gap-2">
                 <span className="text-orange mt-0.5">•</span>
-                Map ridership growth by municipality
+                See which hours and days are busiest
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange mt-0.5">•</span>
-                Measure impact of new stations
+                Find which stations have the most traffic
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange mt-0.5">•</span>
-                Present visual evidence to city council
+                Plan rides to avoid peak congestion
               </li>
             </ul>
           </div>
