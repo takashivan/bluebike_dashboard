@@ -37,6 +37,7 @@ export default function About() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <Section icon={User} title="Persona 1: Marketing Manager" accent="blue">
+          <img src={`${import.meta.env.BASE_URL}images/persona_manager.jpeg`} alt="Marketing Manager persona" className="w-full h-48 object-cover object-top rounded-lg mb-3" />
           <p className="text-xs font-semibold text-blue uppercase tracking-wide mb-2">
             Marketing Manager — Bluebikes
           </p>
@@ -64,6 +65,7 @@ export default function About() {
         </Section>
 
         <Section icon={User} title="Persona 2: Bluebikes Rider" accent="orange">
+          <img src={`${import.meta.env.BASE_URL}images/persona_user.jpeg`} alt="Bluebikes Rider persona" className="w-full h-48 object-cover object-top rounded-lg mb-3" />
           <p className="text-xs font-semibold text-orange uppercase tracking-wide mb-2">
             Daily Commuter — Bluebikes Rider
           </p>
